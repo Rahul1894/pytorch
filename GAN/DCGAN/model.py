@@ -75,6 +75,7 @@ def test():
     assert disc(x).shape == (N,1,1,1)
 
     gen=generator(z_dim,in_channels,8)
+    initialize_weights(gen)
     y=torch.randn((N,z_dim,1,1))
     assert gen(y).shape == (N,in_channels,H,W)
     print("success")
